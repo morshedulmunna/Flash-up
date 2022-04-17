@@ -108,7 +108,6 @@
   .btn {
     display: flex;
     flex-direction: column;
-    margin-left: 2rem;
   }
   .btn #log__in {
     margin-bottom: 4rem;

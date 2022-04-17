@@ -26,7 +26,7 @@ const Signup = () => {
     if (user) {
       navigat("/");
     }
-  }, [user]);
+  }, [navigat, user]);
 
   return (
     <div className="login container">

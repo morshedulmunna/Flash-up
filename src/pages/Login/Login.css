@@ -30,6 +30,15 @@
   font-size: 16px;
   width: 100%;
 }
+.subLink > p {
+  font-weight: 400;
+  font-size: 16px;
+}
+.subLink p > span {
+  cursor: pointer;
+  color: #1e32ff;
+  font-weight: 500;
+}
 .login_content button {
   padding: 0.5rem 1.2rem;
   background-color: #1e32ff;

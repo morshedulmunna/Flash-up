@@ -12,11 +12,13 @@ import {
 } from "./pages/index.pages";
 import RequireAuth from "./requireAuth/RequireAuth";
 import { Footer, Navbar } from "./shared";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
       <Navbar />
+      <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/photo-gallery" element={<PhotoGallery />} />
