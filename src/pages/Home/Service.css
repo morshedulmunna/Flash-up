@@ -1,0 +1,46 @@
+.service_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.service_wrapper .content img {
+  width: 100%;
+  height: fit-content;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.content .title_price {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+
+.content button {
+  border: none;
+  background-color: #3f60ff;
+  padding: 0.5rem 0.8rem;
+  color: #fff;
+  margin-top: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.content button:hover {
+  background-color: #143af8;
+  transition: ease 0.3s;
+}
+
+@media screen and (max-width: 505px) {
+  .content .title_price {
+    flex-direction: column;
+  }
+  .service_wrapper {
+    padding: 0;
+  }
+}

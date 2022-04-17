@@ -47,9 +47,23 @@
   transition: ease-in-out 0.3s;
 }
 
+/* Service Part ===>>> */
+.tittle {
+  text-align: center;
+  margin-top: 2rem;
+}
+.service {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
 @media screen and (max-width: 768px) {
   .home .home__wrapper {
     width: 90%;
     padding-top: 10rem;
+  }
+  .service {
+    grid-template-columns: 1fr;
   }
 }
