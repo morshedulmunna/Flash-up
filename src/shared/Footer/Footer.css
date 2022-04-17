@@ -1,0 +1,92 @@
+.footer {
+  background-color: #090e36;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.footer .footer__wrapper {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 6fr;
+  grid-gap: 20px;
+  padding-top: 50px;
+}
+
+.footer__wrapper i {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d8e9ff;
+}
+
+.footer__wrapper h3 {
+  color: #fff;
+  width: fit-content;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.footer__wrapper span {
+  display: block;
+  color: #fff;
+  line-height: 2;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 14px;
+}
+.footer__wrapper span:hover {
+  color: #3f60ff;
+  transition: ease-in-out 0.3s;
+}
+
+.subscribe .input__Wrapper input {
+  width: 80%;
+  font-size: 18px;
+  padding: 5px 5px;
+  border: none;
+}
+.subscribe .input__Wrapper input:focus {
+  outline: none;
+}
+.subscribe .input__Wrapper button {
+  background-color: #3f60ff;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 0.4rem 0.8rem;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* icons */
+.subscribe .social {
+  color: #d8e9ff;
+  margin-top: 10px;
+  font-size: 30px;
+}
+.subscribe .social b {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+.subscribe .social b:hover {
+  color: #3f60ff;
+  transition: ease-in-out 0.3s;
+}
+.subscribe .social strong:hover {
+  color: #3f60ff;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .subscribe .input__Wrapper button {
+    margin: 0;
+    margin-top: 5px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .footer .footer__wrapper {
+    grid-template-columns: 12fr;
+  }
+}
