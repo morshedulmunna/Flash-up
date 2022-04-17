@@ -10,7 +10,7 @@ const Service = ({ service }) => {
           <img src={img} alt="" />
           <div className="title_price">
             <h2> {title} </h2>
-            <h2>$ {price} </h2>
+            <h2>${price} </h2>
           </div>
 
           <p>{dec.slice(0, 150)}</p>
