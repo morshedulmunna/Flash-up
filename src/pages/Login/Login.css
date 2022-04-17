@@ -7,3 +7,44 @@
   align-items: center;
   height: 50vh;
 }
+
+.login_wrapper {
+  width: 100%;
+  margin: auto;
+}
+
+.login_wrapper h1 {
+  text-align: center;
+}
+
+.common {
+  margin: 1rem 0rem;
+}
+.common p {
+  margin: 0.2rem 0rem;
+  font-size: 18px;
+  font-weight: 500;
+}
+.common input {
+  padding: 0.5rem;
+  font-size: 16px;
+  width: 100%;
+}
+.login_content button {
+  padding: 0.5rem 1.2rem;
+  background-color: #1e32ff;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.social__login i {
+  font-size: 30px;
+  cursor: pointer;
+}
+.social__login i:hover {
+  color: #1e32ff;
+  transition: ease 0.3s;
+}
