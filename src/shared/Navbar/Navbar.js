@@ -38,8 +38,12 @@ const Navbar = () => {
                 </CustomLink>
               </ul>
               <div className="btn">
-                <button id="log__in">Login</button>
-                <button id="sign__in">Sign up</button>
+                <Link to="/login">
+                  <button id="log__in">Login</button>
+                </Link>
+                <Link to="/signup">
+                  <button id="sign__in">Sign up</button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,3 +1,55 @@
 .home {
-  height: 71.4vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),
+    url("../../images/background-bg.jpg");
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .home__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  color: #fff;
+  width: 50%;
+  /* Mobile */
+  /* width: 90%; */
+  margin: auto;
+  padding-top: 20rem;
+}
+
+.home__wrapper h1 {
+  padding-bottom: 1rem;
+}
+.home__wrapper p {
+  line-height: 1.5;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.home__wrapper #more_btn {
+  align-self: flex-end;
+}
+#more_btn button {
+  padding: 0.5rem 1.5rem;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #1322ef;
+}
+#more_btn button:hover {
+  background-color: #3f60ff;
+  transition: ease-in-out 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  .home .home__wrapper {
+    width: 90%;
+    padding-top: 10rem;
+  }
 }
