@@ -4,8 +4,13 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import { MdNoFlash } from "react-icons/md";
 import CustomLink from "../../RouterHelp/CustomLink";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase/firebaseInit";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [user] = useAuthState(auth);
+
   return (
     <>
       <div className="Navbar">
@@ -39,10 +44,16 @@ const Navbar = () => {
               </ul>
               <div className="btn">
                 <Link to="/login">
-                  <button id="log__in">Login</button>
+                  {user ? (
+                    <button onClick={() => signOut(auth)} id="sign__in">
+                      Log out
+                    </button>
+                  ) : (
+                    <button id="log__in">Login</button>
+                  )}
                 </Link>
                 <Link to="/signup">
-                  <button id="sign__in">Sign up</button>
+                  {!user && <button id="sign__in">Sign up</button>}
                 </Link>
               </div>
             </div>

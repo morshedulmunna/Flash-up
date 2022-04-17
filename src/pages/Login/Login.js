@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { AiFillGoogleSquare } from "react-icons/ai";
 import { FaGithubSquare } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase/firebaseInit";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const nagivate = useNavigate();
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(email, password);
+  };
+
+  if (user) {
+    nagivate("/");
+  }
+
   return (
     <div className="login container">
       <div className="login_wrapper">
@@ -12,14 +30,22 @@ const Login = () => {
           <p>
             To Keep connected with us. Please login your personal information
           </p>
-          <form>
+          <form onSubmit={handleLogIn}>
             <div className="email common">
               <p>Email</p>
-              <input type="email" placeholder="Enter your Email" />
+              <input
+                onBlur={(event) => setEmail(event.target.value)}
+                type="email"
+                placeholder="Enter your Email"
+              />
             </div>
             <div className="password common">
               <p>Password</p>
-              <input type="password" placeholder="Enter your Password" />
+              <input
+                onBlur={(event) => setPassword(event.target.value)}
+                type="password"
+                placeholder="Enter your Password"
+              />
             </div>
             <button type="submit">Sign in</button>
           </form>
