@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { AiFillGoogleSquare } from "react-icons/ai";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -15,7 +15,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, , error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, userGoogle] = useSignInWithGoogle(auth);
 
@@ -101,6 +101,9 @@ const Login = () => {
                 <p onClick={handleForgetPassword}>
                   Forget your password? <span>Reset Here</span>
                 </p>
+                <Link to="/signup">
+                  <span>Create an Account</span>
+                </Link>
               </div>
             </div>
             <button type="submit">Sign in</button>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase/firebaseInit";
 
 const Signup = () => {
@@ -8,7 +9,7 @@ const Signup = () => {
   // const [myError, setMyError] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
-  const [createUserWithEmailAndPassword, user] =
+  const [createUserWithEmailAndPassword, user, , error] =
     useCreateUserWithEmailAndPassword(auth);
   const navigat = useNavigate();
 
@@ -16,7 +17,7 @@ const Signup = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      // setMyError("Password didn't Match");
+      toast.error("Password didn't Match!");
       return;
     }
     createUserWithEmailAndPassword(email, password);
@@ -28,6 +29,24 @@ const Signup = () => {
     }
   }, [navigat, user]);
 
+  // Error Handle ---
+  useEffect(() => {
+    if (error) {
+      console.log(error.code);
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          toast.error("Email Aleady Exist!");
+          break;
+        case "invalid-email":
+          toast.error("invalid-email!");
+          break;
+
+        default:
+          toast.error("Somting is wrong");
+          break;
+      }
+    }
+  }, [error]);
   return (
     <div className="login container">
       <div className="login_wrapper">
@@ -65,6 +84,9 @@ const Signup = () => {
                 required
               />
             </div>
+            <Link to="/login">
+              <p style={{ marginBottom: "10px" }}>Already have an Account</p>
+            </Link>
             <button type="submit">Sign Up</button>
           </form>
         </div>

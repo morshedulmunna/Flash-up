@@ -65,6 +65,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <span
+          style={{
+            color: "#fff",
+          }}
+        >
+          ©copyright all credit 2022 morshedulmunna
+        </span>
       </div>
     </div>
   );
