@@ -10,13 +10,15 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const nagivate = useNavigate();
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user] =
     useSignInWithEmailAndPassword(auth);
 
   const handleLogIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(email, password);
   };
+
+  // console.log(user);
 
   if (user) {
     nagivate("/");
@@ -37,6 +39,7 @@ const Login = () => {
                 onBlur={(event) => setEmail(event.target.value)}
                 type="email"
                 placeholder="Enter your Email"
+                required
               />
             </div>
             <div className="password common">
@@ -45,6 +48,7 @@ const Login = () => {
                 onBlur={(event) => setPassword(event.target.value)}
                 type="password"
                 placeholder="Enter your Password"
+                required
               />
             </div>
             <button type="submit">Sign in</button>

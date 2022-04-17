@@ -1,28 +1,29 @@
 import React, { useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase/firebaseInit";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
-  const [myError, setMyError] = useState("");
+  // const [myError, setMyError] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth);
+  const navigat = useNavigate();
 
   const handleCreateUser = (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      setMyError("Password didn't Match");
+      // setMyError("Password didn't Match");
       return;
     }
     createUserWithEmailAndPassword(email, password);
   };
 
   if (user) {
-    Navigate("/");
+    navigat("/");
   }
 
   return (
@@ -41,6 +42,7 @@ const Signup = () => {
                 onBlur={(event) => setEmail(event.target.value)}
                 type="email"
                 placeholder="Enter your Email"
+                required
               />
             </div>
             <div className="password common">
@@ -49,6 +51,7 @@ const Signup = () => {
                 onBlur={(event) => setPassword(event.target.value)}
                 type="password"
                 placeholder="Enter your Password"
+                required
               />
             </div>
             <div className="password common">
@@ -57,6 +60,7 @@ const Signup = () => {
                 onBlur={(event) => setconfirmPassword(event.target.value)}
                 type="password"
                 placeholder="Enter again ......"
+                required
               />
             </div>
             <button type="submit">Sign Up</button>
