@@ -1,6 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { About, Blog, Home, Login, Service, Signup } from "./pages/index.pages";
+import {
+  About,
+  Blog,
+  Home,
+  Login,
+  PhotoGallery,
+  Signup,
+} from "./pages/index.pages";
 import { Footer, Navbar } from "./shared";
 
 function App() {
@@ -9,7 +16,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/service" element={<Service />} />
+        <Route path="/photo-gallery" element={<PhotoGallery />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />

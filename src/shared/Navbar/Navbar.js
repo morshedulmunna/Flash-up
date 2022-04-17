@@ -27,8 +27,8 @@ const Navbar = () => {
                 <CustomLink to="/">
                   <span>Home</span>
                 </CustomLink>
-                <CustomLink to="/service">
-                  <span>Service</span>
+                <CustomLink to="/photo-gallery">
+                  <span>Photo Gallery</span>
                 </CustomLink>
                 <CustomLink to="/blog">
                   <span>Blog</span>
