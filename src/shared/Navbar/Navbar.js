@@ -1,6 +1,9 @@
 import "./NAvbar.css";
 import React, { useState } from "react";
-import { FaArtstation, FaTimes, FaBars } from "react-icons/fa";
+import { FaTimes, FaBars } from "react-icons/fa";
+import { MdNoFlash } from "react-icons/md";
+import CustomLink from "../../RouterHelp/CustomLink";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -9,18 +12,30 @@ const Navbar = () => {
         <div className="container">
           <div className="row">
             <div className="logo">
-              <span>
-                <FaArtstation />
-              </span>
+              <Link to="/">
+                <span>
+                  <MdNoFlash />
+                  <span>FlashUp </span>
+                </span>
+              </Link>
             </div>
             <div onClick={() => setOpen(!open)} className="toggle">
               {open ? <FaBars /> : <FaTimes />}
             </div>
             <div className={open ? "nav__mob" : "nav__item"}>
               <ul>
-                <span>Home</span>
-                <span>Payment</span>
-                <span>Features</span>
+                <CustomLink to="/">
+                  <span>Home</span>
+                </CustomLink>
+                <CustomLink to="/service">
+                  <span>Service</span>
+                </CustomLink>
+                <CustomLink to="/blog">
+                  <span>Blog</span>
+                </CustomLink>
+                <CustomLink to="/about">
+                  <span>About</span>
+                </CustomLink>
               </ul>
               <div className="btn">
                 <button id="log__in">Login</button>
