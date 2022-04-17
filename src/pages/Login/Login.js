@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { AiFillGoogleSquare } from "react-icons/ai";
 import { FaGithubSquare } from "react-icons/fa";
@@ -9,7 +9,7 @@ import auth from "../../firebase/firebaseInit";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const nagivate = useNavigate();
+  const navigate = useNavigate();
   const [signInWithEmailAndPassword, user] =
     useSignInWithEmailAndPassword(auth);
 
@@ -18,11 +18,11 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
 
-  // console.log(user);
-
-  if (user) {
-    nagivate("/");
-  }
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user]);
 
   return (
     <div className="login container">

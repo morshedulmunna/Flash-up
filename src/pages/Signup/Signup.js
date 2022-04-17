@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../firebase/firebaseInit";
@@ -22,9 +22,11 @@ const Signup = () => {
     createUserWithEmailAndPassword(email, password);
   };
 
-  if (user) {
-    navigat("/");
-  }
+  useEffect(() => {
+    if (user) {
+      navigat("/");
+    }
+  }, [user]);
 
   return (
     <div className="login container">

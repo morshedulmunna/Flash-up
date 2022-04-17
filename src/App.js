@@ -10,6 +10,7 @@ import {
   PhotoGallery,
   Signup,
 } from "./pages/index.pages";
+import RequireAuth from "./requireAuth/RequireAuth";
 import { Footer, Navbar } from "./shared";
 
 function App() {
@@ -23,7 +24,14 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+            <RequireAuth>
+              <Checkout />
+            </RequireAuth>
+          }
+        />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />

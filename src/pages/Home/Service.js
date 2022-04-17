@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Service.css";
 
 const Service = ({ service }) => {
@@ -14,7 +15,9 @@ const Service = ({ service }) => {
           </div>
 
           <p>{dec.slice(0, 150)}</p>
-          <button>Explore Package</button>
+          <Link to="/checkout">
+            <button>Explore Package</button>
+          </Link>
         </div>
       </div>
     </>
