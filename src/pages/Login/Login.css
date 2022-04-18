@@ -1,5 +1,6 @@
 .login {
   height: 67.7vh;
+  margin-top: 2rem;
 }
 .login_wrapper {
   display: flex;

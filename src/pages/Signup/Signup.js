@@ -10,7 +10,8 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
   const [createUserWithEmailAndPassword, user, , error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
   const navigat = useNavigate();
 
   const handleCreateUser = (e) => {
@@ -60,7 +61,7 @@ const Signup = () => {
             <div className="email common">
               <p>Email</p>
               <input
-                onBlur={(event) => setEmail(event.target.value)}
+                onChange={(event) => setEmail(event.target.value)}
                 type="email"
                 placeholder="Enter your Email"
                 required
@@ -69,7 +70,7 @@ const Signup = () => {
             <div className="password common">
               <p>Password</p>
               <input
-                onBlur={(event) => setPassword(event.target.value)}
+                onChange={(event) => setPassword(event.target.value)}
                 type="password"
                 placeholder="Enter your Password"
                 required
@@ -78,7 +79,7 @@ const Signup = () => {
             <div className="password common">
               <p>Confirm Password</p>
               <input
-                onBlur={(event) => setconfirmPassword(event.target.value)}
+                onChange={(event) => setconfirmPassword(event.target.value)}
                 type="password"
                 placeholder="Enter again ......"
                 required

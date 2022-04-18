@@ -15,7 +15,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, , error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, userGoogle] = useSignInWithGoogle(auth);
 
@@ -25,6 +25,7 @@ const Login = () => {
 
   const handleLogIn = (e) => {
     e.preventDefault();
+
     signInWithEmailAndPassword(email, password);
   };
 
@@ -83,7 +84,7 @@ const Login = () => {
             <div className="email common">
               <p>Email</p>
               <input
-                onBlur={(event) => setEmail(event.target.value)}
+                onChange={(event) => setEmail(event.target.value)}
                 type="email"
                 placeholder="Enter your Email"
                 required
@@ -92,7 +93,7 @@ const Login = () => {
             <div className="password common">
               <p>Password</p>
               <input
-                onBlur={(event) => setPassword(event.target.value)}
+                onChange={(event) => setPassword(event.target.value)}
                 type="password"
                 placeholder="Enter your Password"
                 required
