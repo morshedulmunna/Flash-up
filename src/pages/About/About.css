@@ -1,0 +1,31 @@
+/* .about {
+  height: 65.4vh;
+} */
+
+.about .about_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__content {
+  flex-basis: 50%;
+}
+.about_wrapper img {
+  width: 100%;
+  flex-basis: 50%;
+}
+p {
+  margin-top: 10px;
+  margin-bottom: 2rem;
+}
+
+ul {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .about .about_wrapper {
+    flex-direction: column;
+  }
+}
