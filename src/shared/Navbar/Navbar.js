@@ -27,7 +27,7 @@ const Navbar = () => {
             <div onClick={() => setOpen(!open)} className="toggle">
               {open ? <FaBars /> : <FaTimes />}
             </div>
-            <div className={open ? "nav__mob" : "nav__item"}>
+            <div className={!open ? "nav__mob" : "nav__item"}>
               <ul>
                 <CustomLink to="/">
                   <span>Home</span>
