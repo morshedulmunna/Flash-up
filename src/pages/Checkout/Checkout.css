@@ -1,0 +1,9 @@
+.checkout_wrapper {
+  height: 65.4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkout__content {
+  text-align: center;
+}
