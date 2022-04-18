@@ -1,8 +1,10 @@
 import React from "react";
-import GalleryView from "../PhotoGallery/GalleryView";
+import Gallery from "react-photo-gallery";
 import Banner from "./Banner";
 import "./Home.css";
 import Service from "./Service";
+import { photos } from "../../photos";
+import { Link } from "react-router-dom";
 
 const pack = [
   {
@@ -48,12 +50,11 @@ const Home = () => {
         <div className="gallery">
           <h1>Photography / Videography Gallery</h1>
           <div className="home_grallery">
-            <GalleryView />
-            <GalleryView />
-            <GalleryView />
-            <GalleryView />
+            <Gallery photos={photos.slice(0, 6)} direction={"column"} />
           </div>
-          <h2>View All Gallery</h2>
+          <Link to="photo-gallery">
+            <h2>View All Gallery</h2>
+          </Link>
         </div>
       </div>
     </>

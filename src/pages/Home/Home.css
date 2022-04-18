@@ -63,23 +63,20 @@
   text-align: center;
   margin-bottom: 2rem;
 }
-.gallery > h2 {
+.gallery a > h2 {
   text-align: center;
   background-color: #1322ef;
   width: fit-content;
   margin: auto;
-  margin-bottom: 2rem;
   color: #fff;
   padding: 0.5rem 2rem;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
   font-weight: 500;
+  margin-bottom: 2rem;
 }
 .gallery .home_grallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
   margin-bottom: 2rem;
 }
 
