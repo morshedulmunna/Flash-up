@@ -80,6 +80,10 @@
   margin-bottom: 2rem;
 }
 
+.home_grallery img {
+  object-fit: cover;
+}
+
 @media screen and (max-width: 768px) {
   .home .home__wrapper {
     width: 90%;
