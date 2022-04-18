@@ -17,8 +17,8 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
-      <Navbar />
       <Toaster />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/photo-gallery" element={<PhotoGallery />} />

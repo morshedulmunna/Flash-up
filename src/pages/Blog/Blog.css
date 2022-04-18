@@ -1,0 +1,83 @@
+.wrapper_blog {
+  background-color: black;
+}
+.context_Api {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding-top: 2rem;
+}
+.context_Api img {
+  width: 50%;
+  height: fit-content;
+  object-fit: cover;
+}
+
+.blog_text {
+  padding-left: 2rem;
+}
+.blog span {
+  color: gray;
+  font-weight: 500;
+  font-size: 12px;
+}
+.blog_text h1 {
+  color: #fff;
+  margin-top: 1rem;
+}
+.blog_text p {
+  color: #fff;
+  margin-top: 2rem;
+}
+.blog > p {
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.blog p {
+  line-height: 1.5;
+}
+/* sementic tag */
+.semantic_tag {
+  margin-top: 4rem;
+  padding-bottom: 3rem;
+}
+.semantic_tag h1 {
+  color: #fff;
+  padding-bottom: 2rem;
+}
+.semantic_tag img {
+  width: 40%;
+}
+
+.sementic_content {
+  display: flex;
+  justify-content: center;
+}
+.sementic_content p {
+  color: #fff;
+  padding-left: 2rem;
+}
+
+.semantic_tag ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 1300px) {
+  .context_Api {
+    flex-direction: column;
+  }
+  .context_Api img {
+    width: 100%;
+  }
+
+  .sementic_content {
+    flex-direction: column;
+  }
+  .semantic_tag img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
