@@ -1,4 +1,5 @@
 import React from "react";
+import GalleryView from "../PhotoGallery/GalleryView";
 import Banner from "./Banner";
 import "./Home.css";
 import Service from "./Service";
@@ -42,6 +43,17 @@ const Home = () => {
           {pack.map((service) => (
             <Service key={service.id} service={service} />
           ))}
+        </div>
+
+        <div className="gallery">
+          <h1>Photography / Videography Gallery</h1>
+          <div className="home_grallery">
+            <GalleryView />
+            <GalleryView />
+            <GalleryView />
+            <GalleryView />
+          </div>
+          <h2>View All Gallery</h2>
         </div>
       </div>
     </>

@@ -1,0 +1,13 @@
+.image img {
+  width: 100%;
+}
+.gallery_Wrapper h1 {
+  text-align: center;
+  margin: 2rem 0rem;
+}
+.gallery1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 2rem;
+}
