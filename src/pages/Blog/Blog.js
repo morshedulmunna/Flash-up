@@ -18,7 +18,7 @@ const Blog = () => {
               />
             </Fade>
             <div className="blog_text">
-              <span>Published by 18 April 2022</span>
+              <span>Published by 17 April 2022</span>
               <Pulse>
                 <h1>Difference between authorization and authentication ?</h1>
               </Pulse>
@@ -51,7 +51,7 @@ const Blog = () => {
 
           <div className="context_Api">
             <div className="blog_text">
-              <span>Published by 22 April 2022</span>
+              <span>Published by 18 April 2022</span>
               <Pulse>
                 <h1>
                   Why are you using firebase? What other options do you have to
@@ -81,7 +81,7 @@ const Blog = () => {
           </div>
 
           <div className="semantic_tag">
-            <span>Published by 04 April 2022</span>
+            <span>Published by 18 April 2022</span>
             <Fade bottom>
               <h1>
                 What other services does firebase provide other than
