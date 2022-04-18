@@ -15,7 +15,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [signInWithEmailAndPassword, user, , error] =
+  const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, userGoogle] = useSignInWithGoogle(auth);
 
